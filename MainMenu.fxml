@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenu">
+   <children>
+      <VBox fx:id="sideBar" layoutX="-1.0" layoutY="86.0" prefHeight="546.0" prefWidth="146.0" style="-fx-background-color: #777bff; -fx-background-radius: 0 30 30 1;">
+         <children>
+            <MenuBar fx:id="doctor" prefHeight="50.0" prefWidth="140.0" styleClass="sideMenu" stylesheets="@../css/sideBar.css">
+              <menus>
+                <Menu fx:id="Doctor" mnemonicParsing="false" styleClass="pop">
+                  <items>
+                    <MenuItem fx:id="newDoctor" mnemonicParsing="false" styleClass="selection">
+                           <graphic>
+                              <Label style="-fx-background-color: #777bff;" styleClass="selection" text="New Doctor" textAlignment="CENTER" textFill="WHITE">
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding></Label>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="showDoctor" mnemonicParsing="false" styleClass="selection">
+                           <graphic>
+                              <Label style="-fx-background-color: #777bff;" styleClass="selection" text="Show Doctor" textFill="WHITE">
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding></Label>
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                     <graphic>
+                        <Label prefHeight="42.0" prefWidth="154.0" style="-fx-background-color: #777bff;" text="Doctor" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Label>
+                     </graphic>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets top="27.0" />
+               </VBox.margin>
+            </MenuBar>
+            <MenuBar fx:id="facility" prefHeight="50.0" prefWidth="140.0" styleClass="sideMenu">
+               <menus>
+                  <Menu mnemonicParsing="false">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                     <graphic>
+                        <Label text="Label" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <MenuBar fx:id="lab" layoutX="10.0" layoutY="87.0" prefHeight="50.0" prefWidth="140.0" styleClass="sideMenu">
+               <menus>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="Label" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <MenuBar fx:id="medicine" layoutX="10.0" layoutY="137.0" prefHeight="50.0" prefWidth="140.0" styleClass="sideMenu">
+               <menus>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="Label" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <MenuBar fx:id="patient" layoutX="10.0" layoutY="87.0" prefHeight="50.0" prefWidth="140.0" styleClass="sideMenu">
+               <menus>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="Label" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <MenuBar fx:id="staff" layoutX="10.0" layoutY="37.0" prefHeight="50.0" prefWidth="140.0" styleClass="sideMenu">
+               <menus>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="Label" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+      <HBox layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="1000.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="logo" fitHeight="69.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../image/Logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

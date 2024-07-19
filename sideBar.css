@@ -1,0 +1,15 @@
+.sideMenu{
+	-fx-font-weight: bold;
+	-fx-text-fill:white;
+	-fx-background-color: #777bff;
+}
+.sideMenu.pop{
+	-fx-font-weight: bold;
+	-fx-text-fill:white;
+	-fx-background-color: #777bff;
+}
+.sideMenu.selection{
+	-fx-font-weight: bold;
+	-fx-text-fill:white;
+	-fx-background-color: #777bff;
+}
