@@ -19,13 +19,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-public class MainMenu {
-
+public class NewDoctor {
     @FXML
     private Label date;
-
-    @FXML
-    private VBox medicineInfo;
 
     @FXML
     private MenuItem newPatient;
@@ -65,9 +61,6 @@ public class MainMenu {
 
     @FXML
     private Label newLabLabel;
-
-    @FXML
-    private VBox patientInfo;
 
     @FXML
     private Label patientLabel;
@@ -142,9 +135,6 @@ public class MainMenu {
     private HBox topMenu;
 
     @FXML
-    private VBox facilityInfo;
-
-    @FXML
     private Label newPatientLabel;
 
     @FXML
@@ -160,10 +150,10 @@ public class MainMenu {
     private Label showFacilityLabel;
 
     @FXML
-    private VBox sideBar;
+    private Button exitButton;
 
     @FXML
-    private VBox labInfo;
+    private VBox sideBar;
 
     @FXML
     private Label findMedicineLabel;
@@ -176,69 +166,6 @@ public class MainMenu {
 
     @FXML
     private Label time;
-
-    @FXML
-    private VBox doctorInfo;
-
-    @FXML
-    private VBox staffInfo;
-    
-    @FXML
-    private Button exitButton;
-    
-    @FXML
-    private Label totalDoctor;
-    
-    @FXML
-    private HBox doctorNum;
-    
-    @FXML 
-    private Label numOfDoctor;
-    
-    @FXML
-    private Label totalStaff;
-    
-    @FXML
-    private HBox staffNum;
-    
-    @FXML 
-    private Label numOfStaff;
-    
-    @FXML
-    private Label totalPatient;
-    
-    @FXML
-    private HBox patientNum;
-    
-    @FXML 
-    private Label numOfPatient;
-    
-    @FXML
-    private Label totalFacility;
-    
-    @FXML
-    private HBox facilityNum;
-    
-    @FXML 
-    private Label numOfFacility;
-    
-    @FXML
-    private Label totalLab;
-    
-    @FXML
-    private HBox labNum;
-    
-    @FXML 
-    private Label numOfLab;
-    
-    @FXML
-    private Label totalMedicine;
-    
-    @FXML
-    private HBox medicineNum;
-    
-    @FXML 
-    private Label numOfMedicine;
     
     private Timeline timeline;
 

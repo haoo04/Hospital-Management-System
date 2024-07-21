@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="700.0" maxWidth="1069.0" minHeight="400" minWidth="800" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: FFF9D0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomePage">
+<AnchorPane maxHeight="700.0" maxWidth="1069.0" minHeight="400" minWidth="800" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: E6E6FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomePage">
    <children>
       <VBox fx:id="vBoxImage" layoutX="104.0" layoutY="38.0" prefHeight="506.0" prefWidth="793.0">
          <children>
@@ -27,7 +27,7 @@
                   <Font name="Times New Roman Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button id="exitButton" fx:id="exitButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" styleClass="exitButton" stylesheets="@../css/exitButton.css" text="EXIT">
+            <Button id="exitButton" fx:id="exitButton" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="133.0" styleClass="exitButton" stylesheets="@../css/exitButton.css" text="EXIT">
                <font>
                   <Font name="Times New Roman Bold Italic" size="12.0" />
                </font>
@@ -43,6 +43,11 @@
          </font>
       </Label>
       <Label fx:id="clockLabel" layoutX="14.0" prefHeight="50.0" prefWidth="198.0" text="Clock">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="14.0" layoutY="38.0" prefHeight="50.0" prefWidth="198.0" text="Clock">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font>
