@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import application.Main;
+import application.HospitalManagement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -14,12 +14,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class NewDoctor {
+
     @FXML
     private Label date;
 
@@ -34,6 +36,9 @@ public class NewDoctor {
 
     @FXML
     private MenuItem showStaff;
+
+    @FXML
+    private Button mainButton;
 
     @FXML
     private MenuBar labBar;
@@ -69,6 +74,9 @@ public class NewDoctor {
     private MenuItem newFacility;
 
     @FXML
+    private TextField doctorRoomNo;
+
+    @FXML
     private Label showStaffLabel;
 
     @FXML
@@ -87,6 +95,9 @@ public class NewDoctor {
     private MenuItem newLab;
 
     @FXML
+    private TextField doctorWorkTime;
+
+    @FXML
     private MenuItem showDoctor;
 
     @FXML
@@ -102,6 +113,9 @@ public class NewDoctor {
     private MenuItem newMedicine;
 
     @FXML
+    private TextField doctorSpecialist;
+
+    @FXML
     private MenuItem newDoctor;
 
     @FXML
@@ -111,6 +125,12 @@ public class NewDoctor {
     private MenuItem newStaff;
 
     @FXML
+    private TextField doctorName;
+
+    @FXML
+    private TextField doctorId;
+
+    @FXML
     private Menu patientMenu;
 
     @FXML
@@ -118,6 +138,9 @@ public class NewDoctor {
 
     @FXML
     private Label newMedicineLabel;
+
+    @FXML
+    private Button saveButton;
 
     @FXML
     private MenuBar doctorBar;
@@ -139,6 +162,9 @@ public class NewDoctor {
 
     @FXML
     private Label facilityLabel;
+
+    @FXML
+    private TextField doctorQualification;
 
     @FXML
     private MenuBar patientBar;
@@ -166,7 +192,7 @@ public class NewDoctor {
 
     @FXML
     private Label time;
-    
+
     private Timeline timeline;
 
     @FXML
@@ -177,73 +203,101 @@ public class NewDoctor {
     //Doctor menu
     @FXML
     void newDoctor(ActionEvent event) throws Exception {
-    	Main.newDoctorPage();
+    	HospitalManagement.newDoctorPage();
     }
     
     @FXML
     void showDoctor(ActionEvent event) throws Exception {
-    	Main.ShowDoctorPage();
+    	HospitalManagement.ShowDoctorPage();
     }
     
     //Staff Menu
     @FXML
     void newStaff(ActionEvent event) throws Exception {
-    	Main.newStaffPage();
+    	HospitalManagement.newStaffPage();
     }
 
     @FXML
     void showStaff(ActionEvent event) throws Exception {
-    	Main.ShowStaffPage();
+    	HospitalManagement.ShowStaffPage();
     }
     
     //Patient Menu
     @FXML
     void newPatient(ActionEvent event) throws Exception {
-    	Main.newPatientPage();
+    	HospitalManagement.newPatientPage();
     }
 
     @FXML
     void showPatient(ActionEvent event) throws Exception {
-    	Main.ShowPatientPage();
+    	HospitalManagement.ShowPatientPage();
     }
     
     //Facility Menu
     @FXML
     void newFacility(ActionEvent event) throws Exception {
-    	Main.newFacilityPage();
+    	HospitalManagement.newFacilityPage();
     }
 
     @FXML
     void showFacility(ActionEvent event) throws Exception {
-    	Main.ShowFacilityPage();
+    	HospitalManagement.ShowFacilityPage();
     }
     
     //Lab Menu
     @FXML
     void newLab(ActionEvent event) throws Exception {
-    	Main.newLabPage();
+    	HospitalManagement.newLabPage();
     }
 
     @FXML
     void labList(ActionEvent event) throws Exception {
-    	Main.labListPage();
+    	HospitalManagement.labListPage();
     }
     
     //Medicine Menu
     @FXML
     void newMedicine(ActionEvent event) throws Exception {
-    	Main.newMedicinePage();
+    	HospitalManagement.newMedicinePage();
     }
 
     @FXML
     void findMedicine(ActionEvent event) throws Exception {
-    	Main.findMedicinePage();
+    	HospitalManagement.findMedicinePage();
     }
     
     @FXML
     void exit(ActionEvent event) {
     	System.exit(0);
     }
+    
+    @FXML
+    void backMenu(ActionEvent event) throws Exception {
+    	HospitalManagement.mainMenu();
+    }
+    
+    @FXML
+    void saveDoctor(ActionEvent event) throws Exception {
+    	String id = doctorId.getText();
+    	String name = doctorName.getText();
+    	String specialist = doctorSpecialist.getText();
+    	String workTime = doctorWorkTime.getText();
+    	String qualification = doctorQualification.getText();
+    	int room = Integer.parseInt(doctorRoomNo.getText());
+    	HospitalManagement.addNewDoctor(id,name,specialist,workTime,qualification,room);
+    	clearFields();
+    	HospitalManagement.showSuccessMessage();
+    }
+    
+    private void clearFields() {
+        doctorId.clear();
+        doctorName.clear();
+        doctorSpecialist.clear();
+        doctorWorkTime.clear();
+        doctorQualification.clear();
+        doctorRoomNo.clear();
+    }
+    
     
     private void startClock() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateClock()));
@@ -259,4 +313,3 @@ public class NewDoctor {
         time.setText(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
 }
-

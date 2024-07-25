@@ -1,0 +1,17 @@
+#closePage{
+    -fx-font-weight: bold;
+    -fx-background-color:  #777bff;
+    -fx-font-size: 16;
+    -fx-background-radius:  5;
+    -fx-text-fill: white;
+}
+#closePage:hover {
+	-fx-background-color: #6b6ee8;
+    
+}
+#closePage:pressed {
+	-fx-background-color: #6b6ee8;
+	-fx-translate-x: -2;
+	-fx-translate-y: -2;
+	-fx-translate-z: -2;
+}

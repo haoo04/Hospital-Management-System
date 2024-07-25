@@ -9,118 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #f0f0fc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewDoctor">
-   <center>
-      <VBox alignment="CENTER" prefHeight="484.0" prefWidth="782.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="104.0" prefWidth="854.0">
-               <children>
-                  <TextField fx:id="doctorId" prefHeight="42.0" prefWidth="240.0" promptText="Doctor's ID">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Label text="*" textFill="#ff2b00">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="221.0" text="(exp: D001)" textFill="#ff2b00">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets top="30.0" />
-               </padding>
-            </HBox>
-            <HBox prefHeight="71.0" prefWidth="854.0">
-               <children>
-                  <TextField fx:id="doctorName" prefHeight="42.0" prefWidth="240.0" promptText="Name">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="71.0" prefWidth="200.0">
-               <children>
-                  <TextField fx:id="doctorSpecialist" prefHeight="42.0" prefWidth="240.0" promptText="Specialist">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="71.0" prefWidth="854.0">
-               <children>
-                  <TextField fx:id="doctorWorkTime" prefHeight="42.0" prefWidth="240.0" promptText="Work Time">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="71.0" prefWidth="854.0">
-               <children>
-                  <TextField fx:id="doctorQualification" prefHeight="42.0" prefWidth="240.0" promptText="Qualification">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="71.0" prefWidth="854.0">
-               <children>
-                  <TextField fx:id="doctorRoomNo" prefHeight="42.0" prefWidth="240.0" promptText="Room No.">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="mainButton" mnemonicParsing="false" onAction="#backMenu" text="Main">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="230.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveDoctor" text="Save">
-                     <font>
-                        <Font name="SansSerif Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="160.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </center>
+<BorderPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #f0f0fc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShowDoctor">
    <left>
       <VBox fx:id="sideBar" maxHeight="588.0" prefHeight="488.0" prefWidth="146.0" style="-fx-background-color: #777bff; -fx-background-radius: 0 30 30 1;" BorderPane.alignment="CENTER">
          <children>
@@ -317,4 +206,20 @@
          </children>
       </HBox>
    </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f0fc;" BorderPane.alignment="CENTER">
+         <content>
+            <TableView fx:id="doctorTable" prefHeight="548.0" prefWidth="854.0" style="-fx-background-color: #f0f0fc;">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="193.0" text="Name" />
+                  <TableColumn fx:id="specialistColumn" prefWidth="142.0" text="Specialist" />
+                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="107.0" text="Work Time" />
+                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="167.0" text="Qualification" />
+                  <TableColumn fx:id="roomColumn" minWidth="0.0" prefWidth="144.0" text="Room No" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </center>
 </BorderPane>

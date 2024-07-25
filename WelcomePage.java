@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import application.Main;
+import application.HospitalManagement;
 
 public class WelcomePage{
 	
@@ -48,7 +48,7 @@ public class WelcomePage{
 
     @FXML
     public void clickStart(ActionEvent event) throws Exception{
-    	Main.mainMenu();
+    	HospitalManagement.mainMenu();
     }
     
     @FXML

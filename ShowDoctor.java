@@ -3,10 +3,15 @@ package controller;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
+import application.Doctor;
 import application.HospitalManagement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,18 +19,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-public class MainMenu {
+public class ShowDoctor {
 
     @FXML
     private Label date;
-
-    @FXML
-    private VBox medicineInfo;
 
     @FXML
     private MenuItem newPatient;
@@ -65,9 +69,6 @@ public class MainMenu {
 
     @FXML
     private Label newLabLabel;
-
-    @FXML
-    private VBox patientInfo;
 
     @FXML
     private Label patientLabel;
@@ -142,9 +143,6 @@ public class MainMenu {
     private HBox topMenu;
 
     @FXML
-    private VBox facilityInfo;
-
-    @FXML
     private Label newPatientLabel;
 
     @FXML
@@ -160,10 +158,10 @@ public class MainMenu {
     private Label showFacilityLabel;
 
     @FXML
-    private VBox sideBar;
+    private Button exitButton;
 
     @FXML
-    private VBox labInfo;
+    private VBox sideBar;
 
     @FXML
     private Label findMedicineLabel;
@@ -176,75 +174,35 @@ public class MainMenu {
 
     @FXML
     private Label time;
+    
+    @FXML
+    private TableView<Doctor> doctorTable;
 
     @FXML
-    private VBox doctorInfo;
+    private TableColumn<Doctor, String> idColumn;
 
     @FXML
-    private VBox staffInfo;
-    
+    private TableColumn<Doctor, String> nameColumn;
+
     @FXML
-    private Button exitButton;
-    
+    private TableColumn<Doctor, String> specialistColumn;
+
     @FXML
-    private Label totalDoctor;
-    
+    private TableColumn<Doctor, String> workTimeColumn;
+
     @FXML
-    private HBox doctorNum;
-    
-    @FXML 
-    private Label numOfDoctor;
-    
+    private TableColumn<Doctor, String> qualificationColumn;
+
     @FXML
-    private Label totalStaff;
-    
-    @FXML
-    private HBox staffNum;
-    
-    @FXML 
-    private Label numOfStaff;
-    
-    @FXML
-    private Label totalPatient;
-    
-    @FXML
-    private HBox patientNum;
-    
-    @FXML 
-    private Label numOfPatient;
-    
-    @FXML
-    private Label totalFacility;
-    
-    @FXML
-    private HBox facilityNum;
-    
-    @FXML 
-    private Label numOfFacility;
-    
-    @FXML
-    private Label totalLab;
-    
-    @FXML
-    private HBox labNum;
-    
-    @FXML 
-    private Label numOfLab;
-    
-    @FXML
-    private Label totalMedicine;
-    
-    @FXML
-    private HBox medicineNum;
-    
-    @FXML 
-    private Label numOfMedicine;
+    private TableColumn<Doctor, String> roomColumn;
     
     private Timeline timeline;
-
+    
     @FXML
     public void initialize() {
     	startClock();
+        setupTable();
+        loadDoctors();
     }
     
     //Doctor menu
@@ -330,5 +288,20 @@ public class MainMenu {
 
         LocalTime currentTime = LocalTime.now();
         time.setText(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+    }
+    
+    private void setupTable() {
+        idColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showDoctorInfo()[0]));
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showDoctorInfo()[1]));
+        specialistColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showDoctorInfo()[2]));
+        workTimeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showDoctorInfo()[3]));
+        qualificationColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showDoctorInfo()[4]));
+        roomColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showDoctorInfo()[5]));
+    }
+
+    private void loadDoctors() {
+        ArrayList<Doctor> doctors = HospitalManagement.getDoctors();
+        ObservableList<Doctor> doctorList = FXCollections.observableArrayList(doctors);
+        doctorTable.setItems(doctorList);
     }
 }
