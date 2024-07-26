@@ -277,16 +277,34 @@ public class NewDoctor {
     }
     
     @FXML
-    void saveDoctor(ActionEvent event) throws Exception {
-    	String id = doctorId.getText();
-    	String name = doctorName.getText();
-    	String specialist = doctorSpecialist.getText();
-    	String workTime = doctorWorkTime.getText();
-    	String qualification = doctorQualification.getText();
-    	int room = Integer.parseInt(doctorRoomNo.getText());
-    	HospitalManagement.addNewDoctor(id,name,specialist,workTime,qualification,room);
-    	clearFields();
-    	HospitalManagement.showSuccessMessage();
+    void saveDoctor(ActionEvent event) throws Exception{
+    	try {
+    		String id = doctorId.getText();
+    		String name = doctorName.getText();
+    		String specialist = doctorSpecialist.getText();
+    		String workTime = doctorWorkTime.getText();
+    		String qualification = doctorQualification.getText();
+    		String roomNo = doctorRoomNo.getText();
+    		int room = Integer.parseInt(roomNo);
+    		
+    		if(id.isEmpty() || name.isEmpty() || specialist.isEmpty() ||workTime.isEmpty() || qualification.isEmpty() ||roomNo.isEmpty()) {
+    			HospitalManagement.showErrorMessage("Please enter all the data");
+    			return;
+    		}
+    	    if (HospitalManagement.isDoctorIdExists(id)) {
+    	        HospitalManagement.showErrorMessage("Doctor ID already exist! please change");
+    	        return;
+    	    }
+    		HospitalManagement.addNewDoctor(id,name,specialist,workTime,qualification,room);
+    		clearFields();
+    		HospitalManagement.showSuccessMessage();
+    		
+    	}catch(NumberFormatException e) {
+    		HospitalManagement.showErrorMessage("Please enter the correct room no");
+    		
+    	}catch(Exception e) {
+    		HospitalManagement.showErrorMessage("Please check again the data"+e.getMessage());
+    	}
     }
     
     private void clearFields() {

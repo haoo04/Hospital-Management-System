@@ -15,7 +15,7 @@
          <children>
             <HBox prefHeight="104.0" prefWidth="854.0">
                <children>
-                  <TextField fx:id="doctorId" prefHeight="42.0" prefWidth="240.0" promptText="Doctor's ID">
+                  <TextField fx:id="doctorId" prefHeight="42.0" prefWidth="240.0" promptText="Doctor's ID" stylesheets="@../css/TextField.css">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -28,7 +28,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="221.0" text="(exp: D001)" textFill="#ff2b00">
+                  <Label alignment="BOTTOM_LEFT" prefHeight="42.0" prefWidth="221.0" text="(exp: 001)" textFill="#ff2b00">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -40,7 +40,7 @@
             </HBox>
             <HBox prefHeight="71.0" prefWidth="854.0">
                <children>
-                  <TextField fx:id="doctorName" prefHeight="42.0" prefWidth="240.0" promptText="Name">
+                  <TextField fx:id="doctorName" prefHeight="42.0" prefWidth="240.0" promptText="Name" stylesheets="@../css/TextField.css">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -48,11 +48,16 @@
                         <Insets left="250.0" />
                      </HBox.margin>
                   </TextField>
+                  <Label text="*" textFill="#ff2b00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="71.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="doctorSpecialist" prefHeight="42.0" prefWidth="240.0" promptText="Specialist">
+                  <TextField fx:id="doctorSpecialist" prefHeight="42.0" prefWidth="240.0" promptText="Specialist" stylesheets="@../css/TextField.css">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -60,11 +65,16 @@
                         <Insets left="250.0" />
                      </HBox.margin>
                   </TextField>
+                  <Label text="*" textFill="#ff2b00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="71.0" prefWidth="854.0">
                <children>
-                  <TextField fx:id="doctorWorkTime" prefHeight="42.0" prefWidth="240.0" promptText="Work Time">
+                  <TextField fx:id="doctorWorkTime" prefHeight="42.0" prefWidth="240.0" promptText="Work Time" stylesheets="@../css/TextField.css">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -72,11 +82,16 @@
                         <Insets left="250.0" />
                      </HBox.margin>
                   </TextField>
+                  <Label text="*" textFill="#ff2b00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="71.0" prefWidth="854.0">
                <children>
-                  <TextField fx:id="doctorQualification" prefHeight="42.0" prefWidth="240.0" promptText="Qualification">
+                  <TextField fx:id="doctorQualification" prefHeight="42.0" prefWidth="240.0" promptText="Qualification" stylesheets="@../css/TextField.css">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -84,11 +99,16 @@
                         <Insets left="250.0" />
                      </HBox.margin>
                   </TextField>
+                  <Label text="*" textFill="#ff2b00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="71.0" prefWidth="854.0">
                <children>
-                  <TextField fx:id="doctorRoomNo" prefHeight="42.0" prefWidth="240.0" promptText="Room No.">
+                  <TextField fx:id="doctorRoomNo" prefHeight="42.0" prefWidth="240.0" promptText="Room No." stylesheets="@../css/TextField.css">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
@@ -96,19 +116,29 @@
                         <Insets left="250.0" />
                      </HBox.margin>
                   </TextField>
+                  <Label text="*" textFill="#ff2b00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="42.0" prefWidth="221.0" text="(exp: 123)" textFill="#ff2b00">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="mainButton" mnemonicParsing="false" onAction="#backMenu" text="Main">
+                  <Button fx:id="mainButton" mnemonicParsing="false" onAction="#backMenu" prefHeight="37.0" prefWidth="76.0" styleClass="returnMainButtuon" stylesheets="@../css/GeneralButton.css" text="Main">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="230.0" />
+                        <Insets left="220.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveDoctor" text="Save">
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveDoctor" prefHeight="37.0" prefWidth="76.0" styleClass="saveButton" stylesheets="@../css/GeneralButton.css" text="Save">
                      <font>
                         <Font name="SansSerif Bold" size="18.0" />
                      </font>

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.Screen;
@@ -57,12 +58,20 @@ public class HospitalManagement extends Application {
 		addNewDoctor("213","Chin Yi Hao","General surgery","10.00 a.m.~4.00 p.m.","Master of Medicine (Surgery)",001);
 	}
 	
+	
 	//Doctor Menu
 	public static void newDoctorPage() throws Exception {
 	    BorderPane newDoc = (BorderPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/NewDoctor.fxml"));
 	    Scene newDoctor = new Scene(newDoc,1000,650);
 	    display.setScene(newDoctor);
 	}
+
+	public static void ShowDoctorPage() throws Exception {
+	    BorderPane showDoc = (BorderPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/ShowDoctor.fxml"));
+	    Scene showDoctor = new Scene(showDoc,1000,650);
+	    display.setScene(showDoctor);
+	}
+	
 	public static void addNewDoctor(String docId,String docName,String docSpecialist,String docWorkTime,String docQualification,int docRoomNo) throws Exception{
 		Doctor newDoctor = Doctor.newDoctor(docId, docName, docSpecialist, docWorkTime, docQualification, docRoomNo);
 		doctors.add(newDoctor);
@@ -72,11 +81,20 @@ public class HospitalManagement extends Application {
 	    return doctors;
 	}
 	
-	public static void ShowDoctorPage() throws Exception {
-	    BorderPane showDoc = (BorderPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/ShowDoctor.fxml"));
-	    Scene showDoctor = new Scene(showDoc,1000,650);
-	    display.setScene(showDoctor);
+    public static boolean isDoctorIdExists(String id) {
+        for (Doctor doctor : doctors) {
+            if (doctor.getID().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+	
+	public static int getDoctorCount() {
+	    return doctors.size();
 	}
+	
+	
 	
 	//Staff Menu
 	public static void newStaffPage() throws Exception {
@@ -154,6 +172,14 @@ public class HospitalManagement extends Application {
 		success.setScene(showSuccess);
 
 		success.show();
+	}
+	
+	public static void showErrorMessage(String message) throws Exception{
+	    Alert alert = new Alert(Alert.AlertType.ERROR);
+	    alert.setTitle("opps...Somethings Wrong");
+	    alert.setHeaderText(null);
+	    alert.setContentText(message);
+	    alert.showAndWait();
 	}
 	
 	public static void main(String[] args) {

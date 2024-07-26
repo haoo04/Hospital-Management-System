@@ -22,5 +22,9 @@ public class Doctor {
     public String[] showDoctorInfo() {
         return new String[]{id, name, specialist, workTime, qualification, String.valueOf(room)};
     }
+    
+    public String getID() {
+    	return id;
+    }
 
 }

@@ -14,17 +14,17 @@
          <children>
             <HBox prefHeight="257.0" prefWidth="714.0" VBox.vgrow="NEVER">
                <children>
-                  <VBox fx:id="doctorInfo" maxHeight="480.0" maxWidth="300.0" prefHeight="160.0" prefWidth="174.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
+                  <VBox fx:id="doctorInfo" alignment="CENTER" maxHeight="480.0" maxWidth="300.0" prefHeight="160.0" prefWidth="174.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="totalDoctor" alignment="TOP_LEFT" text="Total Doctor" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="15.0" top="30.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox fx:id="doctorNum" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
+                        <HBox fx:id="doctorNum" alignment="CENTER" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="numOfDoctor" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="10" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="ALWAYS">
                                  <font>
@@ -34,7 +34,7 @@
                                     <Insets />
                                  </opaqueInsets>
                                  <HBox.margin>
-                                    <Insets left="70.0" top="20.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Label>
                            </children>
@@ -47,17 +47,17 @@
                         <Insets left="90.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox fx:id="staffInfo" maxHeight="480.0" maxWidth="300.0" prefHeight="160.0" prefWidth="174.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
+                  <VBox fx:id="staffInfo" alignment="CENTER" maxHeight="480.0" maxWidth="300.0" prefHeight="160.0" prefWidth="174.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="totalStaff" alignment="TOP_LEFT" text="Total Staff">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="25.0" top="30.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox fx:id="staffNum" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
+                        <HBox fx:id="staffNum" alignment="CENTER" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="numOfStaff" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="10" textAlignment="CENTER" textFill="WHITE">
                                  <font>
@@ -67,7 +67,7 @@
                                     <Insets />
                                  </opaqueInsets>
                                  <HBox.margin>
-                                    <Insets left="70.0" top="20.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Label>
                            </children>
@@ -80,17 +80,17 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox fx:id="patientInfo" maxHeight="480.0" maxWidth="300.0" prefHeight="160.0" prefWidth="174.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
+                  <VBox fx:id="patientInfo" alignment="CENTER" maxHeight="480.0" maxWidth="300.0" prefHeight="160.0" prefWidth="174.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="totalPatient" alignment="TOP_LEFT" text="Total Patient">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="15.0" top="30.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox fx:id="patientNum" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
+                        <HBox fx:id="patientNum" alignment="CENTER" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="numOfPatient" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="10" textAlignment="CENTER" textFill="WHITE">
                                  <font>
@@ -99,9 +99,6 @@
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
-                                 <HBox.margin>
-                                    <Insets left="70.0" top="20.0" />
-                                 </HBox.margin>
                               </Label>
                            </children>
                            <VBox.margin>
@@ -123,17 +120,17 @@
             </HBox>
             <HBox prefHeight="270.0" prefWidth="714.0" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox fx:id="facilityInfo" maxHeight="220.0" maxWidth="300.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
+                  <VBox fx:id="facilityInfo" alignment="CENTER" maxHeight="220.0" maxWidth="300.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="totalFacility" alignment="TOP_LEFT" text="Total Facility" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="15.0" top="30.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox fx:id="facilityNum" maxHeight="180.0" maxWidth="300.0" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
+                        <HBox fx:id="facilityNum" alignment="CENTER" maxHeight="180.0" maxWidth="300.0" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="numOfFacility" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="10" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="ALWAYS">
                                  <font>
@@ -142,9 +139,6 @@
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
-                                 <HBox.margin>
-                                    <Insets left="70.0" top="20.0" />
-                                 </HBox.margin>
                               </Label>
                            </children>
                            <VBox.margin>
@@ -156,17 +150,17 @@
                         <Insets left="90.0" top="50.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox fx:id="labInfo" maxHeight="220.0" maxWidth="300.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
+                  <VBox fx:id="labInfo" alignment="CENTER" maxHeight="220.0" maxWidth="300.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="totalLab" alignment="TOP_LEFT" text="Total Lab" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="30.0" top="30.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox fx:id="labNum" maxHeight="180.0" maxWidth="300.0" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
+                        <HBox fx:id="labNum" alignment="CENTER" maxHeight="180.0" maxWidth="300.0" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="numOfLab" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="10" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="ALWAYS">
                                  <font>
@@ -175,9 +169,6 @@
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
-                                 <HBox.margin>
-                                    <Insets left="70.0" top="20.0" />
-                                 </HBox.margin>
                               </Label>
                            </children>
                            <VBox.margin>
@@ -189,17 +180,17 @@
                         <Insets left="50.0" top="50.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox fx:id="medicineInfo" maxHeight="220.0" maxWidth="300.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
+                  <VBox fx:id="medicineInfo" alignment="CENTER" maxHeight="220.0" maxWidth="300.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 30;" styleClass="information" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="totalMedicine" alignment="TOP_LEFT" text="Total Medicine" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="5.0" top="30.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox fx:id="medicineNum" maxHeight="180.0" maxWidth="300.0" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
+                        <HBox fx:id="medicineNum" alignment="CENTER" maxHeight="180.0" maxWidth="300.0" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #777bff; -fx-background-radius: 15 20 30 30;" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="numOfMedicine" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="10" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="ALWAYS">
                                  <font>
@@ -208,9 +199,6 @@
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
-                                 <HBox.margin>
-                                    <Insets left="70.0" top="20.0" />
-                                 </HBox.margin>
                               </Label>
                            </children>
                            <VBox.margin>

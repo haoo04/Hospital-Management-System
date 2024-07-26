@@ -176,7 +176,7 @@
                   <Insets left="180.0" />
                </HBox.margin>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="105.0" prefWidth="413.0" text="NEW DOCTOR" textAlignment="JUSTIFY" textFill="#6961f2">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="105.0" prefWidth="413.0" styleClass="title" text=" DOCTOR LIST" textAlignment="JUSTIFY" textFill="#6961f2">
                      <font>
                         <Font name="SansSerif Bold" size="48.0" />
                      </font>
@@ -207,16 +207,40 @@
       </HBox>
    </top>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f0fc;" BorderPane.alignment="CENTER">
+      <ScrollPane maxHeight="1000.0" maxWidth="1000.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f0fc; -fx-border-color: #f0f0fc;" BorderPane.alignment="CENTER">
          <content>
-            <TableView fx:id="doctorTable" prefHeight="548.0" prefWidth="854.0" style="-fx-background-color: #f0f0fc;">
+            <TableView fx:id="doctorTable" maxHeight="1000.0" maxWidth="1000.0" prefHeight="550.0" prefWidth="835.0" style="-fx-background-color: #f0f0fc; -fx-background-radius: 20; -fx-border-color: #f0f0fc;" stylesheets="@../css/Table.css">
               <columns>
-                <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID" />
-                <TableColumn fx:id="nameColumn" prefWidth="193.0" text="Name" />
-                  <TableColumn fx:id="specialistColumn" prefWidth="142.0" text="Specialist" />
-                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="107.0" text="Work Time" />
-                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="167.0" text="Qualification" />
-                  <TableColumn fx:id="roomColumn" minWidth="0.0" prefWidth="144.0" text="Room No" />
+                <TableColumn fx:id="idColumn" prefWidth="64.0" styleClass="firstCol">
+                     <graphic>
+                        <Label styleClass="tableHeader" text="ID" />
+                     </graphic>
+                  </TableColumn>
+                <TableColumn fx:id="nameColumn" prefWidth="136.0">
+                     <graphic>
+                        <Label styleClass="tableHeader" text="Name" />
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="specialistColumn" prefWidth="167.0">
+                     <graphic>
+                        <Label styleClass="tableHeader" text="Specialist" />
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="176.0">
+                     <graphic>
+                        <Label styleClass="tableHeader" text="Work Time" />
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="208.0">
+                     <graphic>
+                        <Label styleClass="tableHeader" text="Qualification" />
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="roomColumn" minWidth="0.0" prefWidth="81.0" styleClass="lastCol">
+                     <graphic>
+                        <Label styleClass="tableHeader" text="Room No" />
+                     </graphic>
+                  </TableColumn>
               </columns>
             </TableView>
          </content>

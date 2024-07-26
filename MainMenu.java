@@ -245,6 +245,7 @@ public class MainMenu {
     @FXML
     public void initialize() {
     	startClock();
+    	updateDoctorCount();
     }
     
     //Doctor menu
@@ -316,6 +317,11 @@ public class MainMenu {
     @FXML
     void exit(ActionEvent event) {
     	System.exit(0);
+    }
+    
+    public void updateDoctorCount() {
+        int count = HospitalManagement.getDoctorCount();
+        numOfDoctor.setText(String.valueOf(count));
     }
     
     private void startClock() {
