@@ -21,7 +21,8 @@ import javafx.geometry.Rectangle2D;
 
 public class HospitalManagement extends Application {
 	static Stage display;
-	private static ArrayList<Doctor> doctors = new ArrayList();
+	private static ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+	private static ArrayList<Patient> patients = new ArrayList<Patient>();
 	//Welcome Page
 	@Override
 	public void start(Stage WelcomePage) throws Exception {
@@ -56,6 +57,7 @@ public class HospitalManagement extends Application {
 	//initialized data
 	public static void initData() throws Exception {
 		addNewDoctor("213","Chin Yi Hao","General surgery","10.00 a.m.~4.00 p.m.","Master of Medicine (Surgery)",001);
+		addNewPatient("243","Niubi","pregnant","Male","To Be Verified",16);
 	}
 	
 	
@@ -108,19 +110,44 @@ public class HospitalManagement extends Application {
 	    Scene showStaff = new Scene(showStf,1000,650);
 	    display.setScene(showStaff);
 	}
+
 	
 	//Patient Menu
 	public static void newPatientPage() throws Exception {
-	    AnchorPane newPtn = (AnchorPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/NewPatient.fxml"));
+	    BorderPane newPtn = (BorderPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/NewPatient.fxml"));
 	    Scene newPatient = new Scene(newPtn,1000,650);
 	    display.setScene(newPatient);
 	}
 	
 	public static void ShowPatientPage() throws Exception {
-	    AnchorPane showPtn = (AnchorPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/ShowPatient.fxml"));
+	    BorderPane showPtn = (BorderPane)FXMLLoader.load(HospitalManagement.class.getResource("/fxml/ShowPatient.fxml"));
 	    Scene showPatient = new Scene(showPtn,1000,650);
 	    display.setScene(showPatient);
 	}
+	
+	
+	public static void addNewPatient(String patId,String patName,String patDisease,String patSex,String patAdmitStatus,int patAge) throws Exception{
+		Patient newPatient = Patient.newPatient(patId,patName,patDisease,patSex,patAdmitStatus,patAge);
+		patients.add(newPatient);
+	}
+	
+	public static ArrayList<Patient> getPatients() {
+	    return patients;
+	}
+	
+	public static boolean isPatientIdExists(String id) {
+        for (Patient patient : patients) {
+            if (patient.getID().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+	
+	public static int getPatientCount() {
+	    return patients.size();
+	}
+	
 	
 	//Facility Menu
 	public static void newFacilityPage() throws Exception {

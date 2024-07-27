@@ -1,7 +1,5 @@
 package application;
 
-import javafx.scene.control.Label;
-
 public class Doctor {
 	private String id, name, specialist, workTime, qualification;
 	private int room;

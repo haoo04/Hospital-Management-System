@@ -246,6 +246,7 @@ public class MainMenu {
     public void initialize() {
     	startClock();
     	updateDoctorCount();
+    	updatePatientCount();
     }
     
     //Doctor menu
@@ -322,6 +323,10 @@ public class MainMenu {
     public void updateDoctorCount() {
         int count = HospitalManagement.getDoctorCount();
         numOfDoctor.setText(String.valueOf(count));
+    }
+    public void updatePatientCount() {
+        int count = HospitalManagement.getPatientCount();
+        numOfPatient.setText(String.valueOf(count));
     }
     
     private void startClock() {

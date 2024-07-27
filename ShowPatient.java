@@ -3,10 +3,15 @@ package controller;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import application.HospitalManagement;
+import application.Patient;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,13 +19,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-public class NewDoctor {
+public class ShowPatient {
 
     @FXML
     private Label date;
@@ -36,9 +42,6 @@ public class NewDoctor {
 
     @FXML
     private MenuItem showStaff;
-
-    @FXML
-    private Button mainButton;
 
     @FXML
     private MenuBar labBar;
@@ -74,9 +77,6 @@ public class NewDoctor {
     private MenuItem newFacility;
 
     @FXML
-    private TextField doctorRoomNo;
-
-    @FXML
     private Label showStaffLabel;
 
     @FXML
@@ -95,9 +95,6 @@ public class NewDoctor {
     private MenuItem newLab;
 
     @FXML
-    private TextField doctorWorkTime;
-
-    @FXML
     private MenuItem showDoctor;
 
     @FXML
@@ -113,9 +110,6 @@ public class NewDoctor {
     private MenuItem newMedicine;
 
     @FXML
-    private TextField doctorSpecialist;
-
-    @FXML
     private MenuItem newDoctor;
 
     @FXML
@@ -125,12 +119,6 @@ public class NewDoctor {
     private MenuItem newStaff;
 
     @FXML
-    private TextField doctorName;
-
-    @FXML
-    private TextField doctorId;
-
-    @FXML
     private Menu patientMenu;
 
     @FXML
@@ -138,9 +126,6 @@ public class NewDoctor {
 
     @FXML
     private Label newMedicineLabel;
-
-    @FXML
-    private Button saveButton;
 
     @FXML
     private MenuBar doctorBar;
@@ -162,9 +147,6 @@ public class NewDoctor {
 
     @FXML
     private Label facilityLabel;
-
-    @FXML
-    private TextField doctorQualification;
 
     @FXML
     private MenuBar patientBar;
@@ -192,12 +174,35 @@ public class NewDoctor {
 
     @FXML
     private Label time;
+    
+    @FXML
+    private TableView<Patient> patientTable;
 
+    @FXML
+    private TableColumn<Patient, String> idColumn;
+
+    @FXML
+    private TableColumn<Patient, String> nameColumn;
+
+    @FXML
+    private TableColumn<Patient, String> diseaseColumn;
+
+    @FXML
+    private TableColumn<Patient, String> sexColumn;
+
+    @FXML
+    private TableColumn<Patient, String> admitStatusColumn;
+
+    @FXML
+    private TableColumn<Patient, String> ageColumn;
+    
     private Timeline timeline;
-
+    
     @FXML
     public void initialize() {
     	startClock();
+        setupTable();
+        loadPatients();
     }
     
     //Doctor menu
@@ -271,52 +276,6 @@ public class NewDoctor {
     	System.exit(0);
     }
     
-    @FXML
-    void backMenu(ActionEvent event) throws Exception {
-    	HospitalManagement.mainMenu();
-    }
-    
-    @FXML
-    void saveDoctor(ActionEvent event) throws Exception{
-    	try {
-    		String id = doctorId.getText();
-    		String name = doctorName.getText();
-    		String specialist = doctorSpecialist.getText();
-    		String workTime = doctorWorkTime.getText();
-    		String qualification = doctorQualification.getText();
-    		String roomNo = doctorRoomNo.getText();
-    		int room = Integer.parseInt(roomNo);
-    		
-    		if(id.isEmpty() || name.isEmpty() || specialist.isEmpty() ||workTime.isEmpty() || qualification.isEmpty() ||roomNo.isEmpty()) {
-    			HospitalManagement.showErrorMessage("Please enter all the data !");
-    			return;
-    		}
-    	    if (HospitalManagement.isDoctorIdExists(id)) {
-    	        HospitalManagement.showErrorMessage("Doctor ID already exist! please change!");
-    	        return;
-    	    }
-    		HospitalManagement.addNewDoctor(id,name,specialist,workTime,qualification,room);
-    		clearFields();
-    		HospitalManagement.showSuccessMessage();
-    		
-    	}catch(NumberFormatException e) {
-    		HospitalManagement.showErrorMessage("Please enter the correct room no!");
-    		
-    	}catch(Exception e) {
-    		HospitalManagement.showErrorMessage("Please check again the data filled!");
-    	}
-    }
-    
-    private void clearFields() {
-        doctorId.clear();
-        doctorName.clear();
-        doctorSpecialist.clear();
-        doctorWorkTime.clear();
-        doctorQualification.clear();
-        doctorRoomNo.clear();
-    }
-    
-    
     private void startClock() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateClock()));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -329,5 +288,20 @@ public class NewDoctor {
 
         LocalTime currentTime = LocalTime.now();
         time.setText(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+    }
+    
+    private void setupTable() {
+        idColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showPatientInfo()[0]));
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showPatientInfo()[1]));
+        diseaseColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showPatientInfo()[2]));
+        sexColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showPatientInfo()[3]));
+        admitStatusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showPatientInfo()[4]));
+        ageColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().showPatientInfo()[5]));
+    }
+
+    private void loadPatients() {
+        ArrayList<Patient> patients = HospitalManagement.getPatients();
+        ObservableList<Patient> patientList = FXCollections.observableArrayList(patients);
+        patientTable.setItems(patientList);
     }
 }
