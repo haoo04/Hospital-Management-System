@@ -60,13 +60,40 @@ public class HospitalManagement extends Application {
 	}
 	//initialized data
 	public static void initData() throws Exception {
-		addNewDoctor("213","Chin Yi Hao","General surgery","10.00 a.m.~4.00 p.m.","Master of Medicine (Surgery)",001);
-		addNewPatient("243","Niubi","pregnant","Male","To Be Verified",16);
-		addNewFacility("Toilet");
-		addNewLab("kunkun",250);
-		addNewMedicine("Wei Ge", "chai xu kun", "2022/12/12", 10000, 10);
-		addNewStaff("624", "pundek", "Male", "Nurse", 20000, "Toilet");
-		addNewStaff("628", "sohai", "Male", "Pharmacist", 27949, "Toilet");
+		addNewDoctor("001","Bryan","General surgery","10.00 a.m.~4.00 p.m.","Master of Medicine (Surgery)",1);
+		addNewDoctor("002","Chai Xu Kun","Cardiologist","10.00 a.m.~2.00 p.m.","ScD in Epidemiology (Cardiovascular)",3);
+		addNewDoctor("003","Krishnamurthi","Endocrinology","1.00 p.m.~4.00 p.m.","PhD in Endocrinology and Metabolism",7);
+		addNewDoctor("004","Hakim Gharib","Otorhinolaryngology","1.00 p.m.~5.00 p.m.","Master of Otorhinolaryngology",12);
+		
+		addNewStaff("103", "Michelle Chong", "Female", "Nurse", 4000, "Neurology Division");
+		addNewStaff("628", "Nancy Wong", "Female", "Pharmacist", 9500, "20594");
+		addNewStaff("628", "Loo Voon Shan", "Female", "Pharmacist", 8000, "135289");
+		
+		addNewPatient("122","Meredith Ling","Bone fracture","Female","Under treatment",19);
+		addNewPatient("159","Tan Boon Teik","Gastroenteritis","Male","Recovered",33);
+		addNewPatient("185","Ang Ee Ling","Sinusitis","Female","Recovered",21);
+		
+		addNewFacility("Emergency Room");
+		addNewFacility("Operating Room");
+		addNewFacility("Intensive Care Unit (ICU)");
+		addNewFacility("Wards");
+		addNewFacility("Pharmacy");
+		addNewFacility("Outpatient Department");
+		
+		addNewLab("Clinical Chemistry Laboratory",19000);
+		addNewLab("Hematology Laboratory",14800);
+		addNewLab("Microbiology Laboratory",25000);
+		addNewLab("Toxicology Laboratory",16900);
+		addNewLab("Blood Bank",7000);
+		
+		addNewMedicine("Atropine", "Pfizer", "12/11/2024", 29400, 10000);
+		addNewMedicine("Penicillin", "Pfizer", "01/02/2025", 79240, 60000);
+		addNewMedicine("Amoxicillin", "Antimicrobe", "03/05/2025", 56700, 25000);
+		addNewMedicine("Aspirin", "Actiza", "09/10/2024", 128, 300);
+		addNewMedicine("Paracetamol", "Haleon", "11/11/2026", 37000, 50000);
+		addNewMedicine("Insulin", "Eli Lilly", "08/09/2025", 278480, 8000);
+		addNewMedicine("Morphine", "Pfizer", "12/11/2025", 11400, 3000);
+
 	}
 	
 	
