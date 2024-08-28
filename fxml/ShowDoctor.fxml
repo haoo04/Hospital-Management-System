@@ -216,22 +216,22 @@
                         <Label styleClass="tableHeader" text="ID" />
                      </graphic>
                   </TableColumn>
-                <TableColumn fx:id="nameColumn" prefWidth="136.0">
+                <TableColumn fx:id="nameColumn" prefWidth="124.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Name" />
                      </graphic>
                   </TableColumn>
-                  <TableColumn fx:id="specialistColumn" prefWidth="167.0">
+                  <TableColumn fx:id="specialistColumn" prefWidth="140.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Specialist" />
                      </graphic>
                   </TableColumn>
-                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="176.0">
+                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="179.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Work Time" />
                      </graphic>
                   </TableColumn>
-                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="208.0">
+                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="244.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Qualification" />
                      </graphic>
