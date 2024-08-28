@@ -1,5 +1,6 @@
 # HOSPITAL MANAGEMENT SYSTEM
-Arrangement of the folder:
+Remember configure the JavaFx environment before run the programe
+Arrangement of the folder:  
 ../HospitalManagementSystem/  
 ![image](https://github.com/haoo04/HMS/blob/main/folderLocation1.png)  
 ../HospitalManagementSystem/src/  
