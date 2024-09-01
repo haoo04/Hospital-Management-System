@@ -211,27 +211,27 @@
          <content>
             <TableView fx:id="doctorTable" maxHeight="1000.0" maxWidth="1000.0" prefHeight="503.0" prefWidth="837.0" style="-fx-background-color: #f0f0fc; -fx-background-radius: 20; -fx-border-color: #f0f0fc;" stylesheets="@../css/Table.css">
               <columns>
-                <TableColumn fx:id="idColumn" prefWidth="64.0" styleClass="firstCol">
+                <TableColumn fx:id="idColumn" prefWidth="57.0" styleClass="firstCol">
                      <graphic>
                         <Label styleClass="tableHeader" text="ID" />
                      </graphic>
                   </TableColumn>
-                <TableColumn fx:id="nameColumn" prefWidth="124.0">
+                <TableColumn fx:id="nameColumn" prefWidth="131.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Name" />
                      </graphic>
                   </TableColumn>
-                  <TableColumn fx:id="specialistColumn" prefWidth="140.0">
+                  <TableColumn fx:id="specialistColumn" prefWidth="132.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Specialist" />
                      </graphic>
                   </TableColumn>
-                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="179.0">
+                  <TableColumn fx:id="workTimeColumn" minWidth="0.0" prefWidth="159.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Work Time" />
                      </graphic>
                   </TableColumn>
-                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="244.0">
+                  <TableColumn fx:id="qualificationColumn" minWidth="0.0" prefWidth="272.0">
                      <graphic>
                         <Label styleClass="tableHeader" text="Qualification" />
                      </graphic>
