@@ -5,11 +5,11 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.Screen;
@@ -18,7 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.geometry.Rectangle2D;
 
-public class HospitalManagement extends Application {
+public class HospitalManagement extends Application{
 	static Stage display;
 	private static ArrayList<Doctor> doctors = new ArrayList<Doctor>();
 	private static ArrayList<Staff> staffs = new ArrayList<Staff>();
@@ -67,7 +67,7 @@ public class HospitalManagement extends Application {
 		
 		addNewStaff("103", "Michelle Chong", "Female", "Nurse", 4000, "Neurology Division");
 		addNewStaff("628", "Nancy Wong", "Female", "Pharmacist", 9500, "20594");
-		addNewStaff("628", "Loo Voon Shan", "Female", "Pharmacist", 8000, "135289");
+		addNewStaff("629", "Loo Voon Shan", "Female", "Pharmacist", 8000, "135289");
 		
 		addNewPatient("122","Meredith Ling","Bone fracture","Female","Under treatment",19);
 		addNewPatient("159","Tan Boon Teik","Gastroenteritis","Male","Recovered",33);
@@ -93,7 +93,6 @@ public class HospitalManagement extends Application {
 		addNewMedicine("Paracetamol", "Haleon", "11/11/2026", 37000, 50000);
 		addNewMedicine("Insulin", "Eli Lilly", "08/09/2025", 278480, 8000);
 		addNewMedicine("Morphine", "Pfizer", "12/11/2025", 11400, 3000);
-
 	}
 	
 	
@@ -313,7 +312,21 @@ public class HospitalManagement extends Application {
 	    alert.showAndWait();
 	}
 	
+	public static void exitMessage() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Application");
+        alert.setHeaderText("Are you sure you want to exit the application?");
+        alert.setContentText("Click OK to exit the app");
+
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                System.exit(0);
+            }
+        });
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }
