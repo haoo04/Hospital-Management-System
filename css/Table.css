@@ -25,7 +25,7 @@
 .table-cell{
 	-fx-font-family: "SansSerif";
 	-fx-text-fill:black ;
-	-fx-font-size:14;
+	-fx-font-size:13;
 }
 .table-row-cell{
 	-fx-cell-size:50;
