@@ -158,7 +158,7 @@ public class LabList {
     private Label showFacilityLabel;
 
     @FXML
-    private Button exitButton;
+    private Button Button;
 
     @FXML
     private VBox sideBar;
@@ -264,7 +264,7 @@ public class LabList {
     
     @FXML
     void exit(ActionEvent event) {
-    	System.exit(0);
+    	HospitalManagement.exitMessage();
     }
     
     @FXML

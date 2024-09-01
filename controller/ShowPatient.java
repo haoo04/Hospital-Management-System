@@ -276,7 +276,7 @@ public class ShowPatient {
     
     @FXML
     void exit(ActionEvent event) {
-    	System.exit(0);
+    	HospitalManagement.exitMessage();
     }
     
     @FXML

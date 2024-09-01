@@ -321,7 +321,7 @@ public class MainMenu {
     
     @FXML
     void exit(ActionEvent event) {
-    	System.exit(0);
+    	HospitalManagement.exitMessage();
     }
     
     public void updateDoctorCount() {
@@ -355,7 +355,7 @@ public class MainMenu {
     }
     
     private void startClock() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateClock()));
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), e -> updateClock()));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }

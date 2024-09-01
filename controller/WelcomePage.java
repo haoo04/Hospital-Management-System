@@ -38,8 +38,7 @@ public class WelcomePage{
     private HBox hBoxButton;
     
     @FXML
-    private VBox vBoxImage;
-   
+    private VBox vBoxImage; 
     
     @FXML
     public void initialize() {
@@ -53,12 +52,12 @@ public class WelcomePage{
     
     @FXML
     public void exit(ActionEvent event) throws Exception{
-    	System.exit(0);
+    	HospitalManagement.exitMessage();
     }
     
     private void startClock() {
         timeline = new Timeline(
-                new KeyFrame(Duration.seconds(1), e -> updateClock())
+                new KeyFrame(Duration.seconds(0.1), e -> updateClock())
         );
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
